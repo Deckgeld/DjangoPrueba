@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-<title>{% block titulo %}{% endblock  %}</title>
+{% block titulo %}Ejemplo{% endblock  %}
 
 {% load static %}
 <link href=" {% static 'inicio/css/bootstrap.min.css' %} " rel="stylesheet" type="text/css">
@@ -58,29 +58,27 @@
 
 		<!-- Barra de menú -->
 		<div class="sidebar">
-
-            <!-- Imagen de usuario -->
-            <div class="user-menu dropdown">
-                <a href="#" >
-                    <img src="{% block imagen %}{% endblock  %}">
-                    <div class="user-info">
-                        Principal <span>DSM</span>
-                    </div>
-                </a>
-            </div>
-            <!-- /Fin Imagen -->
-
 			<div class="sidebar-content">
 				<!-- Menú de navegación -->
 				<ul class="navigation">
-							<li><a href="{%url 'Principal'%}">Principal</a></li>
-							<li><a href="{% url "Formulario" %}">Formulario</a></li>		
-							<li><a href="{% url "Contacto" %}">Contacto</a></li>		
+							<li><a href="{%url '/'%}">Principal</a></li>
+							<li><a href="{% url "formulario/" %}">Formulario</a></li>		
+							<li><a href="{% url "contacto/" %}">Contacto</a></li>		
 				</ul>
 				<!-- /Fin menú -->
 			</div>
 		</div>
 		<!-- /sidebar -->
+
+        <!-- Imagen de usuario -->
+        <div class="user-menu dropdown">
+            <a href="#" >
+                <img src="{% static 'inicio/images/home.png' %}">
+                <div class="user-info">
+                    Principal <span>DSM</span>
+                </div>
+            </a>
+        </div>
 
         <!--CONTENIDO-->
         {% block contenido%}<!--Template Tag-->
