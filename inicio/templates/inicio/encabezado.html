@@ -1,0 +1,16 @@
+<html lang="es">
+    <head>
+        
+        <title>{% block  titulo%}{% endblock  %}</title>
+    </head>
+    <body>
+        <!--MENU-->
+        <a href="{% url 'Principal' %}">Home</a>
+        <a href="/formulario">Registrar</a>
+        <a href="{% url 'Contacto' %}">Contactanos</a>
+        <!--CONTENIDO-->
+        {% block contenido%}<!--Template Tag-->
+        <!--Bloxk sirve para indicar que colocaremos un bloque de contenido a traves de nuesta variable content-->
+        {% endblock %}
+    </body>
+</html>
