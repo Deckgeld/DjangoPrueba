@@ -2,13 +2,24 @@
 
 {% block titulo %}Contacto{% endblock  %}
 
-{% block contenido %}
-<div class="page-content">
-    <div class="page-header">
-        <h3>Contacto 
-            <small>Ingresa tus datos</small> </h3>
+{% block tituloSlide %}Contacto <span>DSM</span>{% endblock %}
+{% block imagen %}
+    {% load static %}
+    {% static 'inicio/images/contato.png' %}
+{% endblock  %}
 
+{% block contenidoEncabezado %}
+    <div class="page-header">
+        <div class="page-title">
+            <h3>Contacto 
+                <small>Ingresa tus datos</small> </h3>
+
+        </div>
     </div>
+{% endblock %}
+
+{% block contenidoBody %}
+
     <form class="form-horizontal" action="#" role="form">
         <div class="panel panel-default">
             <div class="panel-body">
@@ -33,5 +44,4 @@
             </div>
         </div>
     </form>    
-</div>
 {% endblock  %}

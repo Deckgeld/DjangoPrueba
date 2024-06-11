@@ -64,7 +64,7 @@
                 <a href="#" >
                     <img src="{% block imagen %}{% endblock  %}">
                     <div class="user-info">
-                        Principal <span>DSM</span>
+                        {% block tituloSlide %}{% endblock  %}
                     </div>
                 </a>
             </div>
@@ -83,9 +83,28 @@
 		<!-- /sidebar -->
 
         <!--CONTENIDO-->
-        {% block contenido%}<!--Template Tag-->
-        <!--Bloxk sirve para indicar que colocaremos un bloque de contenido a traves de nuesta variable content-->
-        {% endblock %}
+		<div class="page-content">
+
+			{% block contenidoEncabezado%}<!--Template Tag-->{% endblock %}
+
+			<!--Barra de navegacion-->
+			<div class="breadcrumb-line">
+				<ul class="breadcrumb">
+					<a href="{% url 'Principal' %}">
+						{% if request.path == '/' %}
+							Principal
+						{% else %}
+							Principal{{request.path}}
+						{% endif %}
+					</a>
+				</ul>
+			</div>
+			
+			{% block contenidoBody%}<!--Template Tag-->{% endblock %}
+			
+			
+
+		</div>
 
 	</div>
 </body>
