@@ -23,9 +23,10 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',registros_views.registros, name="Principal"),
-    path('contacto/',views.contacto,name="Contacto"),
+    path('contacto/',registros_views.contacto,name="Contacto"),
     path('formulario/',views.formulario,name="Formulario"),
     path('ejemplo/',views.ejemplo,name="ejemplo"),
+    path('registrar/',registros_views.registrar,name="Registrar"),
 ]
 
 #permite acceder a las variables MEDIA_URL y MEDIA_ROOT que
