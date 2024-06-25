@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Alumnos
+from .models import Comentario
 
 class AdministrarModelo(admin.ModelAdmin):
     readonly_fields = ('created', 'updated')
@@ -10,3 +11,13 @@ class AdministrarModelo(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Alumnos, AdministrarModelo)
+
+######################
+
+class AdministrarComentarios(admin.ModelAdmin):
+    list_display = ('id', 'coment')
+    search_fields = ('id','created')
+    date_hierarchy = 'created'
+    readonly_fields = ('created', 'id')
+
+admin.site.register(Comentario, AdministrarComentarios)
