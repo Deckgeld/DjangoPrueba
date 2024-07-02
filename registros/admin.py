@@ -10,6 +10,12 @@ class AdministrarModelo(admin.ModelAdmin):
     date_hierarchy = 'created'
     list_filter = ('carrera','turno')
 
+    def get_readonly_fields(self, request, obj=None):
+        if request.user.groups.filter(name="Usuarios").exists():
+            return ('matricula', 'carrera', 'turno')
+        else:
+            return ('created', 'updated')
+
 # Register your models here.
 admin.site.register(Alumnos, AdministrarModelo)
 

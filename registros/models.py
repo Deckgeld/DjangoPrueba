@@ -28,7 +28,6 @@ class Comentario(models.Model):
     alumno = models.ForeignKey(Alumnos,
         on_delete=models.CASCADE,verbose_name="Alumno")
     created = models.DateTimeField(auto_now_add=True,verbose_name="Registrado")
-    coment = models.TextField(verbose_name="Comentario")
     coment = RichTextField(verbose_name="Comentario")
 
     class Meta:

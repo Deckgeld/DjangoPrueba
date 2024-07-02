@@ -33,6 +33,14 @@ urlpatterns = [
     path('consultarComentario/<int:id>/', registros_views.consultarCometarioIndividual, name="Consulta individual"),
     path('EditarComentarioContacto/<int:id>/', registros_views.editarComentarioContacto, name="Editar"),
 
+    path('consultas1', registros_views.consultar1, name="Consultas1"),
+    path('consultas2', registros_views.consultar2, name="Consultas2"),
+    path('consultas3', registros_views.consultar3, name="Consultas3"),
+    path('consultas4', registros_views.consultar4, name="Consultas4"),
+    path('consultas5', registros_views.consultar5, name="Consultas5"),
+    path('consultas6', registros_views.consultar6, name="Consultas6"),
+    path('consultas7', registros_views.consultar7, name="Consultas7"),
+
     #path('ejemplo/',views.ejemplo,name="ejemplo"),
 ]
 
