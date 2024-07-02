@@ -24,11 +24,15 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('',registros_views.registros, name="Principal"),
-    path('registrar/',registros_views.registrar,name="Registrar"),
-    path('contacto/',registros_views.contacto,name="Contacto"),
     path('formulario/',views.formulario,name="Formulario"),
-
+    
+    path('registrar/',registros_views.registrar,name="Registrar"),
+    #path('contacto/',registros_views.contacto,name="Contacto"),
     path('comentarios/',registros_views.comentarios,name="Comentarios"),
+    path('eliminarComentarioContacto/<int:id>/', registros_views.eliminarComentarioContacto, name="Eliminar"),
+    path('consultarComentario/<int:id>/', registros_views.consultarCometarioIndividual, name="Consulta individual"),
+    path('EditarComentarioContacto/<int:id>/', registros_views.editarComentarioContacto, name="Editar"),
+
     #path('ejemplo/',views.ejemplo,name="ejemplo"),
 ]
 

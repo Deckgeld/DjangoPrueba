@@ -16,7 +16,7 @@ admin.site.register(Alumnos, AdministrarModelo)
 ######################
 
 class AdministrarComentarios(admin.ModelAdmin):
-    list_display = ('id', 'coment')
+    list_display = ('id', 'alumno', 'coment')
     search_fields = ('id','created')
     date_hierarchy = 'created'
     readonly_fields = ('created', 'id')
@@ -27,7 +27,7 @@ admin.site.register(Comentario, AdministrarComentarios)
 
 class AdministrarComentariosContacto(admin.ModelAdmin):
     list_display = ('id', 'mensaje')
-    search_fields = ('id','created')
+    search_fields = ('id','created', 'usuario')
     date_hierarchy = 'created'
     readonly_fields = ('created', 'id')
     

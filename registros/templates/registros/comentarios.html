@@ -33,10 +33,14 @@
     <tbody>
         {% for comentario in comentarios %}
         <tr>
-            <td>{{ comentario.alumno }}</td>
-            <td>{{ comentario.coment }}</td>
-            <td>Editar</td>
-            <td>Eliminar</td>
+            <td>{{ comentario.usuario }}</td>
+            <td>{{ comentario.mensaje }}</td>
+            <td class='text-center'>
+              <a href="{% url 'Consulta individual' comentario.id %}"> Editar </a>
+            </td>
+            <td class='text-center'> 
+              <a href="{% url 'Eliminar' comentario.id %}"> Eliminar </a> 
+            </td>
         </tr>
         {% endfor %}
   <!-- /Encabezado-->
