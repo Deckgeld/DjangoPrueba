@@ -41,6 +41,7 @@ urlpatterns = [
     path('consultas6', registros_views.consultar6, name="Consultas6"),
     path('consultas7', registros_views.consultar7, name="Consultas7"),
 
+    path('subir/',registros_views.archivos,name="Subir"),
     #path('ejemplo/',views.ejemplo,name="ejemplo"),
 ]
 

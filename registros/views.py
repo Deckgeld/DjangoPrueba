@@ -5,11 +5,31 @@ from .forms import ComentarioContactoForm
 from django.shortcuts import get_object_or_404
 import datetime
 
+from .models import Archivos
+from .forms import FormArchivos
+from django.contrib import messages
+
 ######################  alumnos
 def registros(request):
     # se obtienen todos los registros de la tabla Alumnos
     alumnos = Alumnos.objects.all()
     return render(request, 'registros/principal.html', {'alumnos': alumnos})
+
+def archivos(request):
+    if request.method == 'POST':
+        form = FormArchivos(request.POST, request.FILES)
+        if form.is_valid():
+            titulo = request.POST['titulo']
+            descripcion = request.POST['descripcion']
+            archivo = request.FILES['archivo']
+            insert = Archivos(titulo=titulo, descripcion=descripcion,
+            archivo=archivo)
+            insert.save()
+            return render(request,"registros/archivos.html")
+        else:
+            messages.error(request, "Error al procesar el formulario")
+    else:
+        return render(request,"registros/archivos.html",{'archivo':Archivos})
 
 ######################  comentarios
 
