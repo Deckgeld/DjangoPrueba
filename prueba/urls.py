@@ -44,6 +44,8 @@ urlpatterns = [
     path('subir/',registros_views.archivos,name="Subir"),
 
     path('consultasSQL',registros_views.consultasSQL,name="sql"),
+
+    path('seguridad',registros_views.seguridad,name="Seguridad"),
     #path('ejemplo/',views.ejemplo,name="ejemplo"),
 ]
 
