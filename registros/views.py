@@ -116,3 +116,13 @@ def consultar6(request):
 def consultar7(request):
     alumnos = Alumnos.objects.filter(comentario__coment__contains='10')
     return render(request, 'registros/consultas.html', {'alumnos': alumnos})
+
+###################### CONSULTAS DIRECTAS CON SQL
+def consultasSQL(request):
+    alumnos=Alumnos.objects.raw('SELECT id, matricula, nombre, carrera, turno, imagen FROM registros_alumnos WHERE carrera="TI" ORDER BY turno DESC')
+    return render(request,"registros/consultas.html", {'alumnos':alumnos})
+
+###################### Seguridad
+def seguridad(request, nombre=None):
+    nombre = request.GET.get('nombre')
+    return render(request,"registros/seguridad.html", {'nombre':nombre})    
