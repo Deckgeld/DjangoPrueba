@@ -10,6 +10,12 @@ class AdministrarModelo(admin.ModelAdmin):
     date_hierarchy = 'created'
     list_filter = ('carrera','turno')
 
+    #paginacion
+    list_per_page=2
+    #links para editar
+    list_display_links=('matricula','nombre')
+    list_editable=('turno',)
+
     def get_readonly_fields(self, request, obj=None):
         if request.user.groups.filter(name="Usuarios").exists():
             return ('matricula', 'carrera', 'turno')
